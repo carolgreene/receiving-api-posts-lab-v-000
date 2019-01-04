@@ -2230,3 +2230,20 @@ Processing by ProductsController#create as */*
 [active_model_serializers]   [1m[35mOrder Load (0.3ms)[0m  SELECT "orders".* FROM "orders" INNER JOIN "ordered_products" ON "orders"."id" = "ordered_products"."order_id" WHERE "ordered_products"."product_id" = ?  [["product_id", 30]]
 [active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (65.06ms)
 Completed 201 Created in 121ms (Views: 111.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/products/new" for 73.75.41.119 at 2019-01-04 23:18:59 +0000
+Cannot render console from 73.75.41.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#new as HTML
+  Rendered products/new.html.erb within layouts/application (730.3ms)
+Completed 200 OK in 981ms (Views: 950.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/products" for 73.75.41.119 at 2019-01-04 23:20:00 +0000
+Cannot render console from 73.75.41.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProductsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pr3MTrUk9Q5l9liJF2vqOevqR2izzV9ZMsurKBSmdRrIPSXKvZQrglURXGxn8kg5fWFs7bAVot5+oTlKC3aIzA==", "product"=>{"name"=>"art supplies", "price"=>"10", "description"=>"paint, paper, brushes, and lots of glitter", "inventory"=>"5"}}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "products" ("name", "description", "inventory", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "art supplies"], ["description", "paint, paper, brushes, and lots of glitter"], ["inventory", 5], ["price", 10], ["created_at", "2019-01-04 23:20:00.690531"], ["updated_at", "2019-01-04 23:20:00.690531"]]
+  [1m[35m (2.5ms)[0m  commit transaction
